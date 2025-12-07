@@ -8,7 +8,7 @@
     <style>
         /* 1. Grundeinstellungen & Dark Mode Kill */
         :root {
-            color-scheme: light; /* Sagt dem Browser: Wir wollen helles Design */
+            color-scheme: light; /* Zwingt Browser in den Light-Mode */
         }
         
         body, html {
@@ -18,24 +18,26 @@
             height: 100%;
             background-color: #ffffff !important; /* Erzwingt Weiß */
             font-family: sans-serif;
+            overflow-x: hidden; /* Verhindert seitliches Scrollen */
         }
 
-        /* 2. Der Container, der alles zentriert */
+        /* 2. Der Container - JETZT FULL WIDTH */
         .page-wrapper {
-            max-width: 1200px;  /* Maximale Breite auf Desktop */
             width: 100%;
-            margin: 0 auto;     /* Zentriert den Container */
-            padding: 20px;      /* Abstand zum Rand auf Handy */
-            box-sizing: border-box; /* Verhindert Scrollbalken durch Padding */
+            max-width: 100%;    /* WICHTIG: Begrenzung auf 1200px entfernt */
+            margin: 0;
+            padding: 0;         /* Padding macht jetzt die App intern */
+            box-sizing: border-box;
         }
 
-        /* 3. Das Gradio Element selbst */
+        /* 3. Das Gradio Element */
         gradio-app {
             display: block;
             width: 100%;
-            /* WICHTIG: Mindesthöhe, sonst verschwindet es oft! */
-            min-height: 800px; 
+            /* Nimmt mindestens die ganze Bildschirmhöhe ein */
+            min-height: 100vh; 
             border: none;
+            background: transparent;
         }
     </style>
 
@@ -44,7 +46,7 @@
 <body>
 
     <div class="page-wrapper">
-        <gradio-app src="https://dominik211-test.hf.space"></gradio-app>
+        <gradio-app src="https://dominik211-test.hf.space" theme_mode="light"></gradio-app>
     </div>
 
 </body>
