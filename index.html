@@ -21,12 +21,22 @@
             overflow-x: hidden; /* Verhindert seitliches Scrollen */
         }
 
-        /* 2. Der Container - JETZT FULL WIDTH */
+        /* ZENTRIERUNG DES HAUPTINHALTS */
+        body {
+            display: flex;
+            justify-content: center; /* Schiebt alles in die horizontale Mitte */
+            align-items: flex-start; /* Startet oben */
+        }
+
+        /* 2. Der Container - Flexibel aber zentriert */
         .page-wrapper {
             width: 100%;
-            max-width: 100%;    /* WICHTIG: Begrenzung auf 1200px entfernt */
-            margin: 0;
-            padding: 0;         /* Padding macht jetzt die App intern */
+            /* Optional: Damit es auf 4k-Monitoren nicht zu extrem breit wird, 
+               kann man hier z.B. 1920px oder 2500px setzen. 
+               Mit '100%' nutzt es wirklich alles. */
+            max-width: 100%;    
+            margin: 0 auto;     /* Zentriert den Wrapper selbst */
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -34,7 +44,6 @@
         gradio-app {
             display: block;
             width: 100%;
-            /* Nimmt mindestens die ganze Bildschirmhöhe ein */
             min-height: 100vh; 
             border: none;
             background: transparent;
