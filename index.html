@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Meine Demo</title>
-</head>
-<body>
+<style>
+  body {
+    margin: 0;
+    background: #f5f5f5;
+  }
 
-<script
-  type="module"
-  src="https://gradio.s3-us-west-2.amazonaws.com/6.0.2/gradio.js"
-></script>
+  .gradio-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
 
-<gradio-app src="https://dominik211-test.hf.space"></gradio-app>
+  gradio-app {
+    display: block;
+    width: 100%;
+  }
 
-</body>
-</html>
+  /* Beispiel: Mobile etwas weniger Abstand */
+  @media (max-width: 768px) {
+    .gradio-wrapper {
+      margin: 16px auto;
+      padding: 0 8px;
+    }
+  }
+</style>
