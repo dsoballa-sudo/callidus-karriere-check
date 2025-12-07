@@ -6,47 +6,50 @@
     <title>Karriere-Check Pro</title>
 
     <style>
-        /* 1. Grundeinstellungen & Dark Mode Kill */
+        /* 1. Grundeinstellungen */
         :root {
-            color-scheme: light; /* Zwingt Browser in den Light-Mode */
+            color-scheme: light; 
         }
         
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
-            background-color: #ffffff !important; /* Erzwingt Weiß */
+            min-height: 100%;
+            background-color: #ffffff !important;
             font-family: sans-serif;
-            overflow-x: hidden; /* Verhindert seitliches Scrollen */
+            overflow-x: hidden;
         }
 
-        /* ZENTRIERUNG DES HAUPTINHALTS */
+        /* 2. Body als Flexbox-Zentrale */
         body {
             display: flex;
-            justify-content: center; /* Schiebt alles in die horizontale Mitte */
-            align-items: flex-start; /* Startet oben */
+            flex-direction: column;
+            align-items: center; /* Zentriert alles horizontal */
+            justify-content: flex-start;
         }
 
-        /* 2. Der Container - Flexibel aber zentriert */
+        /* 3. Der Container */
         .page-wrapper {
             width: 100%;
-            /* Optional: Damit es auf 4k-Monitoren nicht zu extrem breit wird, 
-               kann man hier z.B. 1920px oder 2500px setzen. 
-               Mit '100%' nutzt es wirklich alles. */
-            max-width: 100%;    
-            margin: 0 auto;     /* Zentriert den Wrapper selbst */
+            /* Hier ist der Trick: 
+               Wir erlauben bis zu 1800px Breite. 
+               Auf kleineren Screens sind es autom. 100%.
+               Auf riesigen Screens bleibt es bei 1800px und wird zentriert.
+            */
+            max-width: 1800px; 
+            margin: 0 auto;
             padding: 0;
             box-sizing: border-box;
+            background: transparent;
         }
 
-        /* 3. Das Gradio Element */
+        /* 4. Das Gradio Element */
         gradio-app {
             display: block;
             width: 100%;
             min-height: 100vh; 
             border: none;
-            background: transparent;
         }
     </style>
 
